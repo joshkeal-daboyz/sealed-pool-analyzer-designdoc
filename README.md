@@ -7,5 +7,6 @@ This repository holds the design documents only. Code for the app lives elsewher
 ## Documents
 
 - [Design brief](docs/design-brief.md): overview, domain constraints, system architecture, the ten-step development pipeline, the fifteen-agent roster, orchestration, data sources, evaluation, risks, decisions, and roadmap. Snapshot of 2026-11-03.
+- [Agentic development pipeline](docs/agentic-development-pipeline.md): how the app gets built. A central Architect agent writes tickets, Developer agents implement them in their own worktrees, an automated gate runs lint, types, unit, Compose, and snapshot tests before any model reads the branch, and two Testing agents inspect what passes. Includes the ticket contract, gating rules and budgets, feedback loops, tooling, metrics, and the nine decisions taken. Snapshot of 2026-11-03.
 
-The brief is maintained as a living Claude Doc; this repository carries dated snapshots of it.
+Both documents are maintained as living Claude Docs; this repository carries dated snapshots of them.
