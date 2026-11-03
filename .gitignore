@@ -1,0 +1,4 @@
+.claude/
+*.b64
+Thumbs.db
+.DS_Store
