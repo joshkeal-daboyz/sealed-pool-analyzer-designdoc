@@ -22,6 +22,8 @@ The pipeline turns a stated goal into merged, tested code through a central Arch
 - Bounded retries. Every stage has a retry limit, and hitting it escalates rather than loops.
 - Nothing merges without a green gate and both Testing agent verdicts. The Architect merges; it does not skip steps to go faster.
 
+**Standing authorizations.** Added 2026-11-03 after the first two goals asked the human to approve things the goal already settled. The human's approval of the pipeline, the design brief, and each goal's Decided list stands in advance. Pre-approved and never asked again: dispatching any wave of an open goal, merging on a green gate plus both verdicts, bounces and re-plans within limits, every default a goal states, criteria and splits derived from the goal, and pipeline-file commits straight to main. The human is asked once per topic, with options batched: design and visual choices (one review per feature), a new goal's open questions (one list, defaults applied to anything unanswered), an escalation after a limit, anything outside the repository, and a rule change. A pull request exists for code; one opened only to be approved is a sign the rule is being broken.
+
 ## Roles
 
 One Architect, one Designer who writes the screen spec before UI tickets exist, as many Developers as there are independent tickets, two kinds of Testing agent, one automated gate that is code rather than a model, and one human. The gate sits between the Developer and every model that would otherwise read its work.
