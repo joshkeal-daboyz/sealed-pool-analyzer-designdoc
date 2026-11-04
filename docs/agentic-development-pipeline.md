@@ -16,7 +16,7 @@ The pipeline turns a stated goal into merged, tested code through a central Arch
 **Principles every agent follows:**
 
 - The ticket is the contract. A Developer agent implements what the ticket says and nothing more; scope creep is a ticket back to the Architect, not a bigger change.
-- Tests ship with the code. A Developer agent writes the unit tests for its own change before the gate runs, and a ticket with untestable code must say why in the ticket itself.
+- Tests first, in commit order (added 2026-11-03). For every criterion the ticket's test plan marks tests-first, the Developer commits a failing test before the code that makes it pass, in a separate commit, and the Test Inspector verifies the order from git history rather than reasoning about whether the test could fail. Criteria the plan marks as proven by a gate step or by the Acceptance Tester are exempt, so toolchain and wiring tickets carry no ceremony. A criterion the Developer cannot write a failing test for is bounced to the Architect before any code exists.
 - Deterministic before probabilistic. No model reviews code that has not passed the automated gate. The gate's output is the first thing a Testing agent reads.
 - One writer per set of files. Tickets that touch the same files are serialized by the Architect, never run in parallel.
 - Bounded retries. Every stage has a retry limit, and hitting it escalates rather than loops.
